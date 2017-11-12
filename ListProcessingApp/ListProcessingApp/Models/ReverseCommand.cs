@@ -1,8 +1,10 @@
 ﻿namespace ListProcessingApp.Models
 {
+    using System.Collections.Generic;
+
     class ReverseCommand:Command
     {
-        public ReverseCommand(string input, string[] data) : base(input, data)
+        public ReverseCommand(List<string> input, string[] cmdData) : base(input, cmdData)
         {
         }
 

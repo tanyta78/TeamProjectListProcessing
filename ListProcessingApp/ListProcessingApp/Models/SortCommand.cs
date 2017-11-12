@@ -1,8 +1,10 @@
 ﻿namespace ListProcessingApp.Models
 {
+    using System.Collections.Generic;
+
     class SortCommand:Command
     {
-        public SortCommand(string input, string[] data) : base(input, data)
+        public SortCommand(List<string> input, string[] cmdData) : base(input, cmdData)
         {
         }
 

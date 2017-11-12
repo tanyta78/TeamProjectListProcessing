@@ -1,10 +1,11 @@
-﻿using System;
-
-namespace ListProcessingApp.Models
+﻿namespace ListProcessingApp.Models
 {
+    using System;
+    using System.Collections.Generic;
+
     class CountCommand:Command
     {
-        public CountCommand(string input, string[] data) : base(input, data)
+        public CountCommand(List<string> input, string[] cmdData) : base(input, cmdData)
         {
         }
 

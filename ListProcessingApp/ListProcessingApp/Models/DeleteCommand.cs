@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ListProcessingApp.Models
+﻿namespace ListProcessingApp.Models
 {
+    using System.Collections.Generic;
+
     class DeleteCommand:Command
     {
-        public DeleteCommand(string input, string[] data) : base(input, data)
+        public DeleteCommand(List<string> input, string[] cmdData) : base(input, cmdData)
         {
         }
 
         public override void Execute()
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
     }
 }

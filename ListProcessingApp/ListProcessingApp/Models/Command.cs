@@ -1,26 +1,27 @@
 ﻿namespace ListProcessingApp.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
 
     public abstract class Command
     {
-        private string input;
-        private string[] data;
+        private List<string> input;
+        private string[] cmdData;
 
-        public Command(string input, string[] data)
+        public Command(List<string> input, string[] cmdData)
         {
             this.Input = input;
-            this.Data = data;
+            this.CmdData = cmdData;
         }
 
 
-        public string Input
+        public List<string> Input
         {
             get { return this.input; }
             private set
             {
-                if (string.IsNullOrEmpty(value))
+                if (value == null || value.Count == 0)
                 {
                     //to do - change type of exception when created
                     throw new InvalidDataException();
@@ -29,9 +30,9 @@
             }
         }
 
-        public string[] Data
+        public string[] CmdData
         {
-            get { return this.data; }
+            get { return this.cmdData; }
             private set
             {
                 if (value==null || value.Length==0 )
@@ -39,7 +40,7 @@
                     //to do - change type of exception when created
                     throw new NullReferenceException();
                 }
-                this.data = value;
+                this.cmdData = value;
             }
         }
 

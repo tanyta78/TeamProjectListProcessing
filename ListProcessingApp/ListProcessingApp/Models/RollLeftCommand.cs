@@ -1,8 +1,10 @@
 ﻿namespace ListProcessingApp.Models
 {
+    using System.Collections.Generic;
+
     class RollLeftCommand:Command
     {
-        public RollLeftCommand(string input, string[] data) : base(input, data)
+        public RollLeftCommand(List<string> input, string[] cmdData) : base(input, cmdData)
         {
         }
 

@@ -1,8 +1,10 @@
 ﻿namespace ListProcessingApp.Models
 {
+    using System.Collections.Generic;
+
     class PrependCommand:Command
     {
-        public PrependCommand(string input, string[] data) : base(input, data)
+        public PrependCommand(List<string> input, string[] cmdData) : base(input, cmdData)
         {
         }
 

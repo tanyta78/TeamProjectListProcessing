@@ -1,16 +1,16 @@
-﻿using System;
-
-namespace ListProcessingApp.Models
+﻿namespace ListProcessingApp.Models
 {
+    using System.Collections.Generic;
+
     class EndCommand:Command
     {
-        public EndCommand(string input, string[] data) : base(input, data)
+        public EndCommand(List<string>input, string[] cmdData) : base(input, cmdData)
         {
         }
 
         public override void Execute()
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
     }
 }

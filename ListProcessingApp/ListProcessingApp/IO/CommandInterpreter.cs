@@ -1,21 +1,34 @@
 ﻿namespace ListProcessingApp.IO
 {
     using System;
+    using System.Collections.Generic;
+    using System.IO;
     using Models;
 
     public class CommandInterpreter
     {
-        private string input;
-        private string[] data;
+        private List<string> list;
+        
+       public CommandInterpreter(List<string> list)
+        {
+            this.List = list;
+        }
+
+        public List<string> List
+        {
+            get { return this.list; }
+            set { this.list = value; }
+        }
 
         public void InterpredCommand(string input)
         {
-            string[] data = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            string commandName = data[0].ToLower();
+            string[] cmdData = input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string commandName = cmdData[0].ToLower();
 
             try
             {
-                Command cmd = this.ParseCommand(input, commandName, data);
+                Command cmd = this.ParseCommand(this.list, commandName, cmdData);
+                cmd.Execute();
             }
             catch (Exception e)
             {
@@ -23,28 +36,29 @@
             }
         }
 
-        private Command ParseCommand(string input, string command, string[] data)
+        private Command ParseCommand(List<string> listForManipulation, string command, string[] cmdData)
         {
             //to do change when all commands are created
             switch (command)
             {
-                case "append":return  new AppendCommand(input,data);
-                case "prepend": return new PrependCommand(input, data);
-                case "reverse": return new ReverseCommand(input, data);
-                case "insert": return new InsertCommand(input, data);
-                case "delete": return new DeleteCommand(input, data);
-                case "rollleft": return new RollLeftCommand(input, data);
-                case "rollright": return new RollRightCommand(input, data);
-                case "sort": return new SortCommand(input,
-                    data);
+                case "append":return  new AppendCommand(listForManipulation,cmdData);
+                case "prepend": return new PrependCommand(listForManipulation, cmdData);
+                case "reverse": return new ReverseCommand(listForManipulation, cmdData);
+                case "insert": return new InsertCommand(listForManipulation, cmdData);
+                case "delete": return new DeleteCommand(listForManipulation, cmdData);
+                case "rollleft": return new RollLeftCommand(listForManipulation, cmdData);
+                case "rollright": return new RollRightCommand(listForManipulation, cmdData);
+                case "sort": return new SortCommand(listForManipulation,
+                    cmdData);
                 case "count":
-                    return new CountCommand(input,
-                        data);
+                    return new CountCommand(listForManipulation,
+                        cmdData);
                 case "end":
-                    return new EndCommand(input,
-                        data);
+                    return new EndCommand(listForManipulation,
+                        cmdData);
                 default:
-                    throw new InvalidCommandException(input);
+                    //to do - change when exceptions created
+                    throw new InvalidDataException();
 
 
             }
