@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace ListProcessingApp.Models
 {
-    class DeleteCommand
+    class DeleteCommand:Command
     {
+        public DeleteCommand(string input, string[] data) : base(input, data)
+        {
+        }
+
+        public override void Execute()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
