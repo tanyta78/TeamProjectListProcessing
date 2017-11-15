@@ -15,7 +15,7 @@
 
             bool finish = false;
 
-            while (!finish)
+            while (!finish)// тук също е изменено спрямо оригинала
             {
 
                 string commandLine = Console.ReadLine();
@@ -58,7 +58,7 @@
                         else
                         {
                             Console.WriteLine("Finished");
-                            finish = true;
+                            finish = true;// и тук има разлика в съответствие с горната
                         }
 
                         break;
