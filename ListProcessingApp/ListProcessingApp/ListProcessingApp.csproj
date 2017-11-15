@@ -42,22 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exceptions\InvalidCommandException.cs" />
-    <Compile Include="Exceptions\InvalidCommandParametersException.cs" />
-    <Compile Include="IO\CommandInterpreter.cs" />
-    <Compile Include="IO\InputReader.cs" />
-    <Compile Include="IO\OutputWriter.cs" />
-    <Compile Include="Models\AppendCommand.cs" />
-    <Compile Include="Models\Command.cs" />
-    <Compile Include="Models\CountCommand.cs" />
-    <Compile Include="Models\DeleteCommand.cs" />
-    <Compile Include="Models\EndCommand.cs" />
-    <Compile Include="Models\InsertCommand.cs" />
-    <Compile Include="Models\PrependCommand.cs" />
-    <Compile Include="Models\ReverseCommand.cs" />
-    <Compile Include="Models\RollLeftCommand.cs" />
-    <Compile Include="Models\RollRightCommand.cs" />
-    <Compile Include="Models\SortCommand.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
