@@ -9,7 +9,7 @@
     {
         public static void Main()
         {
-
+            //обединени са два реда спрямо оригинала
             List<string> wordsList =
                 Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
