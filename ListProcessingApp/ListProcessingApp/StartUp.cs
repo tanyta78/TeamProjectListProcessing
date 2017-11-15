@@ -3,8 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-
-
+    
     public class StartUp
     {
         public static void Main()
@@ -15,12 +14,11 @@
 
             bool finish = false;
 
-            while (!finish)// тук също е изменено спрямо оригинала
+            while (!finish)// тук също е изменено спрямо оригинала 
             {
 
                 string commandLine = Console.ReadLine();
                 var commandList = commandLine.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-
                 string command = commandList[0];
 
 
@@ -66,8 +64,6 @@
                         Console.WriteLine("Error: invalid command");
                         break;
                 }
-
-
             }
         }
 
@@ -177,7 +173,6 @@
             }
         }
 
-
         private static void Insert(List<string> wordsList, List<string> commandList)
         {
             if (commandList.Count != 3)
@@ -205,7 +200,6 @@
                     Console.WriteLine("Error: invalid command parameters");
                 }
             }
-
         }
 
         private static void PrepEnd(List<string> wordsList, List<string> commandList)
