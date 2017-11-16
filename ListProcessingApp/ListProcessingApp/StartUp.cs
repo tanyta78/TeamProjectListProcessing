@@ -7,14 +7,13 @@
     public class StartUp
     {
         public static void Main()
-        {
-            //обединени са два реда спрямо оригинала
+        {            
             List<string> wordsList =
                 Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
             bool finish = false;
 
-            while (!finish)// тук също е изменено спрямо оригинала 
+            while (!finish)
             {
 
                 string commandLine = Console.ReadLine();
@@ -56,7 +55,7 @@
                         else
                         {
                             Console.WriteLine("Finished");
-                            finish = true;// и тук има разлика в съответствие с горната
+                            finish = true; 
                         }
 
                         break;
